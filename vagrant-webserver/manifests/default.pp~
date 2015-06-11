@@ -1,8 +1,7 @@
 # very basic installation of the apache2 web server
 
-class { 'apache':
-  default_mods        => false,
-  default_confd_files => false,
+package { "apache2":
+    ensure => "latest"
 }
 package { "vsftpd":
     ensure => "latest"

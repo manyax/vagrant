@@ -22,7 +22,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     echo Shell provisioning...
     sudo apt-get update
     sudo apt-get install puppet -y
-    puppet module install apache
 SCRIPT
 
   config.vm.provision "puppet" do |puppet|
