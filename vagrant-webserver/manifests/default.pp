@@ -21,12 +21,12 @@ class { '::mysql::server':
   remove_default_accounts => true,
   override_options        => $override_options
 }
-
+	
 class { 'vsftpd':
   anonymous_enable  => 'NO',
   write_enable      => 'YES',
   ftpd_banner       => 'Manyax FTP Server',
-  chroot_local_user => 'YES',
+  chroot_local_user => 'NO',
 }
 
 wordpress { 'wordpress': }
