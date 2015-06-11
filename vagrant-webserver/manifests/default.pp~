@@ -22,6 +22,14 @@ class { '::mysql::server':
   override_options        => $override_options
 }
 
+mysql::db { 'wordpress':
+  user     => 'wordpress',
+  password => 'default',
+  host     => 'localhost',
+  grant    => ['SELECT', 'UPDATE'],
+}
+
+
 class { 'vsftpd':
   anonymous_enable  => 'NO',
   write_enable      => 'YES',
